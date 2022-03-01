@@ -1,0 +1,71 @@
+Assisted Practice: 3.1 Components
+app.module.ts----------------------
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { ProductComponent } from './product/product.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductComponent,
+    
+  ],
+  imports: [
+    BrowserModule,
+   
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+----------------------------------New folder in app=----------------------------
+----------------------------------product.component.html-------------------------
+<h1>Product List Page</h1>
+<button class="btn btn-primary" (click)='toggleImage()'>
+    Show Image
+</button>
+------------------------product.component-list.ts----------------------------
+import {Component} from '@angular/core';
+
+@Component({
+
+selector: 'product-list', 
+templateUrl:'./product-list.component.html'
+
+})
+
+export class ProductListComponent {
+pageTitle: string ="Product List Page"
+}
+----------------------app.component.ts-----------------------------
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'first-pro';
+}
+-------------------------app.module.ts----------------------------
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
